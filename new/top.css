@@ -1,0 +1,69 @@
+.top{
+    position: relative;
+    height: calc(100vh-40rem);
+    min-height: 42rem;
+    max-height: 57rem;
+    margin-bottom: 4rem;
+}    
+.top .bg-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: calc(100vh-30rem);
+    min-height: 22rem;
+    max-height: 20rem;
+    width: 100%;
+    object-fit: cover;
+}        
+.top .center-content{
+    position: absolute;
+    bottom: calc(20% -5.1rem);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}               
+main .main-logo{
+    height: 10rem;
+    width: 20rem;
+    position: relative;
+    padding: 27px;
+}                      
+main .top h1{
+    color: white;
+    font-weight: 200;
+}      
+main .top .search-container{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 0.8rem;
+    margin-top: 2rem;
+    border: 1px solid rgb(232, 232, 232);
+    height: 3.0rem;
+    align-items: center;
+    justify-content: center;
+}   
+main .top .search-container input{
+    border: none;
+}
+main .top .search-container > div{
+    display: flex;
+    align-items: center;
+} 
+main .top .search-container .location{
+    width: 15rem;
+    padding: 0.1rem;
+    justify-content: space-around;
+}
+main .top .search-container .line{
+    width: 0rem;
+    height: 2rem;
+    border: 0.05rem;
+}
+
+                                                                                                                                                                                                           

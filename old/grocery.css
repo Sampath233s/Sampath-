@@ -1,0 +1,42 @@
+body{
+    background-color: lavenderblush;
+    
+}
+#sam{
+    text-align: center;
+}
+#ram{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    size: 50px;
+    /* background-image: url(bg.jfif); */
+    background-color: antiquewhite;
+      height: 30px; 
+    
+}
+.products div{
+    text-align: center;
+}
+.product{
+    
+    padding: 1px 1px 1px 1px;
+    margin: 1px 1px 1px 1px;
+}
+#banner{
+    top: 0;
+    position: sticky; 
+    background-color: rgb(90, 83, 83);
+    color: white;
+}
+footer{
+    border-top: 1px solid black;
+    margin-top: 10px;
+    background-color: rgb(80, 86, 167);
+    text-align: center;
+}

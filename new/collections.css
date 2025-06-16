@@ -1,0 +1,82 @@
+.heading-2 {
+  font-weight: 300;
+  font-size: 2.4rem;
+  
+}
+.collections{
+    height: 100%;
+    width: 100%;
+}
+
+.heading-6 {
+  font-size: 1.0rem;
+  font-weight: 200;
+}
+
+.collections-desc{
+    display: flex;
+    justify-content: space-between;
+}
+.see-more {
+  background-color: transparent;
+  font-weight: 100;
+  color: rgb(255, 126, 139);
+  font-size: 1.0rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.collections-list {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  gap: 8px;
+}
+.collection {
+  position: relative;
+  width: 100%;
+  max-width: 25%;
+  height: 15rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+.image {
+  height: 100rem;
+}
+.image {
+  height: 15rem;
+}
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05) 85%
+  );
+}
+.overlay-info {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  padding: 0px 1.0rem;
+  font-size: 0.7rem;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.places {
+  font-size: 0.8rem;
+  margin: 0.3rem 0px 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
