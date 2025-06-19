@@ -1,107 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="order.css">
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="clone.jpg" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="order.css">
+  <style>
+    #noResults {
+      display: none;
+      color: red;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="bg-image">
+
+  <div class="bg-image">
     <h1>spice food order on online</h1>
     <div class="search">
-<form action="">
-   <select>
-            <option>Hyderabad</option>
-            <option>hitech city</option>
-            <option>ameerpet</option>
-             <option>raidurgam</option>
-    </select>
-     <label for ="name"></i></label>
-    <input type="name" placeholder="search" >
-    <button class="color">search</button>
-</form> 
-</div>       
-</div>
-    
-    <section class="main-body">
-            <div class="options">  
-                <div class="option">
-                    <div class="image">
-                         <img src="biryani.jfif" alt="img">
-                    </div>
-                   <div class="info">
-                    <div class="info-title">mehfil restuarent</div>
-                    <div class="info-descripition">dum biryani
-                    </div>
-                   <div class="info-price">₹300/--</div>
-                   <div class="info-cart"> <button>Add item</button></div>
-                   </div>
-                </div>
-                <div class="option">
-                    <div class="image">
-                         <img src="fry biryani.jfif" alt="img" >
-                    </div>
-                   <div class="info">
-                    <div class="info-title">pista house</div>
-                    <div class="info-descripition">fry Biryani
-                    </div>
-                    <div class="info-price">₹350/--</div>
-                   <div class="info-cart"> <button>Add item</button></div>
-                   </div>
-                </div>
-                <div class="option">
-                    <div class="image">
-                         <img src="full meals.jfif" alt="img" >
-                    </div>
-                   <div class="info">
-                    <div class="info-title">subbaya hotel</div>
-                    <div class="info-descripition">full veg meals
-                    </div>
-                    <div class="info-price">₹200/--</div>
-                   <div class="info-cart"> <button>Add item</button></div>
-                   </div>
-                </div>
-            </div>  
-        </section> 
-        <hr> 
-        <footer><div class="padding">
-            <div class="contact">
-                <h2>contact us</h2>
-                <ul>
-                    <li>name</li>
-                    <li>mobile number</li>
-                    <li>Email</li>
-                    <li>address</li>
-                </ul>
-            </div>
-            <div class="footer">
-            <h2>zomato</h2>
-            <button onclick="alertButton()  ">add items</button>
-            <script>
-                function alertButton(){
-                    alert("add to cart")
-                }
-            </script>
-            <p>@2025items will be fresh and spicy</p>
-            </div>
-            <div class="socials">
-              <ul>
-                <li></i><i data-feather="linkedin"></i>/linkedin</li>
-                <li><i data-feather="instagram"></i></i>/instagram</li>
-                <li><i data-feather="twitter"></i></i>/twitter</li>
-                <li><i data-feather="youtube"></i></i>/youtube</li>
-                <li><i data-feather="facebook"></i></i>/facebook</li>
-              </ul>
-            </div>
-            </div>
-            
-        </footer>
-        <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-      feather.replace();
-    </script>
-        
-    
+      <form>
+        <select>
+          <option>Hyderabad</option>
+          <option>hitech city</option>
+          <option>ameerpet</option>
+          <option>raidurgam</option>
+        </select>
+        <input type="name" id="searchInput" placeholder="search-Item">
+        <button class="color" type="button">search</button>
+      </form>
+    </div>       
+  </div>
+
+  <section class="main-body">
+    <div class="options">  
+
+      <div class="option" data-name="dum biryani">
+        <div class="image">
+          <img src="biryani.jfif" alt="img">
+        </div>
+        <div class="info">
+          <div class="info-title">mehfil restuarent</div>
+          <div class="info-descripition">dum biryani</div>
+          <div class="info-price">₹300/--</div>
+          <div class="info-cart"><button>Add item</button></div>
+        </div>
+      </div>
+
+      <div class="option" data-name="fry biryani">
+        <div class="image">
+          <img src="fry biryani.jfif" alt="img">
+        </div>
+        <div class="info">
+          <div class="info-title">pista house</div>
+          <div class="info-descripition">fry Biryani</div>
+          <div class="info-price">₹350/--</div>
+          <div class="info-cart"><button>Add item</button></div>
+        </div>
+      </div>
+
+      <div class="option" data-name="full veg meals">
+        <div class="image">
+          <img src="full meals.jfif" alt="img">
+        </div>
+        <div class="info">
+          <div class="info-title">subbaya hotel</div>
+          <div class="info-descripition">full veg meals</div>
+          <div class="info-price">₹200/--</div>
+          <div class="info-cart"><button>Add item</button></div>
+        </div>
+      </div>
+    </div>  
+
+    <!-- ✅ No results message -->
+    <div id="noResults">No item found</div>
+  </section> 
+  <hr> 
+  <footer>
+    <div class="padding">
+      <div class="contact">
+        <h2>contact us</h2>
+        <ul>
+          <li>name</li>
+          <li>mobile number</li>
+          <li>Email</li>
+          <li>address</li>
+        </ul>
+      </div>
+      <div class="footer">
+        <h2>zomato</h2>
+        <button onclick="throttledAdd()">add items</button>
+        <p>@2025items will be fresh and spicy</p>
+      </div>
+      <div class="socials">
+        <ul>
+          <li><i data-feather="linkedin"></i>/linkedin</li>
+          <li><i data-feather="instagram"></i>/instagram</li>
+          <li><i data-feather="twitter"></i>/twitter</li>
+          <li><i data-feather="youtube"></i>/youtube</li>
+          <li><i data-feather="facebook"></i>/facebook</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    feather.replace();
+    const searchInput = document.getElementById("searchInput");
+    const items = document.querySelectorAll(".option");
+    const noResults = document.getElementById("noResults");
+    // ✅ Debounce function
+    function debounce(func, delay) {
+      let timeout;
+      return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), delay);
+      };
+    }
+    // ✅ Throttle function
+    function throttle(func, limit) {
+      let lastCall = 0;
+      return function (...args) {
+        const now = new Date().getTime();
+        if (now - lastCall < limit) return;
+        lastCall = now;
+        return func(...args);
+      };
+    }
+    // ✅ Filter visible items based on input
+    function filterItems() {
+      const query = searchInput.value.toLowerCase();
+      let anyVisible = false;
+
+      items.forEach(item => {
+        const itemName = item.getAttribute("data-name").toLowerCase();
+        if (itemName.includes(query)) {
+          item.style.display = "flex";
+          anyVisible = true;
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      // ✅ Show/hide 'No item found'
+      noResults.style.display = anyVisible ? "none" : "block";
+    }
+
+    // ✅ Apply debounce on search input
+    searchInput.addEventListener("input", debounce(filterItems, 300));
+
+    // ✅ Add to cart alert
+    function alertButton() {
+      alert("add to cart");
+    }
+
+    const throttledAdd = throttle(alertButton, 2000);
+  </script>
+
 </body>
 </html>

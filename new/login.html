@@ -12,10 +12,11 @@
   <h2>Welcome to Zomato</h2>
   <form id="loginForm" action="#">
     <label for="name">Email</label>
-    <input type="text" id="name" name="name" placeholder="Enter your mail" required /><br>
+    <input type="text" id="name" name="name" placeholder="Enter your mail" pattern="[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)" 
+    title="Enter the value like this example@gmail.com" required /><br>
 
     <label for="pass">Password</label>
-    <input type="password" id="pass" name="pass" placeholder="Enter your password" required /><br>
+    <input type="password" id="pass" name="pass" placeholder="Enter your password"  required /><br>
 
     <button type="login">login</button>
 
@@ -24,5 +25,6 @@
   </form>
 
   <script src="login.js"></script>
+  <!-- <script src="logout.js"></script> -->
 </body>
 </html>

@@ -1,25 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-      const loginLink = document.getElementById("login");
+    const loginLogoutBtn = document.getElementById("loginLogoutBtn");
+    const isLoggedIn = localStorage.getItem("loggedInUser");
 
-      function isUserLoggedIn() {
-        return localStorage.getItem("login") === "true";
-      }
-
-      function updateLoginText() {
-        loginLink.textContent = isUserLoggedIn() ? "Logout" : "Login";
-      }
-
-      updateLoginText();
-
-      loginLink.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        if (isUserLoggedIn()) {
-          localStorage.setItem("login", "false");
-          updateLoginText();
-          window.location.href = "login.html";
-        } else {
-          window.location.href = "login.html";
-        }
+    if (isLoggedIn) {
+      loginLogoutBtn.innerHTML = '<i class="fa-solid fa-arrow-right-from-bracket"></i> Logout';
+      loginLogoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("loggedInUser");
+        alert("You have been logged out.");
+        window.location.href = "login.html";
       });
-    });
+    } else {
+      loginLogoutBtn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> Login';
+      loginLogoutBtn.setAttribute("href", "login.html");
+    }
+  });
