@@ -74,7 +74,6 @@
       </div>
     </div>  
 
-    <!-- ✅ No results message -->
     <div id="noResults">No item found</div>
   </section> 
   <hr> 
@@ -105,14 +104,13 @@
       </div>
     </div>
   </footer>
-  <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
   <script>
     feather.replace();
     const searchInput = document.getElementById("searchInput");
     const items = document.querySelectorAll(".option");
     const noResults = document.getElementById("noResults");
-    // ✅ Debounce function
+
     function debounce(func, delay) {
       let timeout;
       return function (...args) {
@@ -120,17 +118,15 @@
         timeout = setTimeout(() => func.apply(this, args), delay);
       };
     }
-    // ✅ Throttle function
-    function throttle(func, limit) {
-      let lastCall = 0;
-      return function (...args) {
-        const now = new Date().getTime();
-        if (now - lastCall < limit) return;
-        lastCall = now;
-        return func(...args);
-      };
-    }
-    // ✅ Filter visible items based on input
+    // function throttle(func, limit) {
+    //   let lastCall = 0;
+    //   return function (...args) {
+    //     const now = new Date().getTime();
+    //     if (now - lastCall < limit) return;
+    //     lastCall = now;
+    //     return func(...args);
+    //   };
+    // }
     function filterItems() {
       const query = searchInput.value.toLowerCase();
       let anyVisible = false;
@@ -145,19 +141,15 @@
         }
       });
 
-      // ✅ Show/hide 'No item found'
       noResults.style.display = anyVisible ? "none" : "block";
     }
 
-    // ✅ Apply debounce on search input
     searchInput.addEventListener("input", debounce(filterItems, 300));
-
-    // ✅ Add to cart alert
     function alertButton() {
       alert("add to cart");
     }
 
-    const throttledAdd = throttle(alertButton, 2000);
+    // const throttledAdd = throttle(alertButton, 20);
   </script>
 
 </body>

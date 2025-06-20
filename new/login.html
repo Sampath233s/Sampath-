@@ -6,25 +6,31 @@
   <title>Login</title>
   <link rel="shortcut icon" href="clone.jpg" type="image/x-icon">
   <link rel="stylesheet" href="login.css" />
+  <script src="login.js"></script>
 </head>
 <body>
     <img src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png?fit=around|198:42&amp;crop=198:42;*,*"alt="Zomato logo"/>
   <h2>Welcome to Zomato</h2>
-  <form id="loginForm" action="#">
-    <label for="name">Email</label>
-    <input type="text" id="name" name="name" placeholder="Enter your mail" pattern="[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)" 
-    title="Enter the value like this example@gmail.com" required /><br>
+  <div class="login-container">
+        
 
-    <label for="pass">Password</label>
-    <input type="password" id="pass" name="pass" placeholder="Enter your password"  required /><br>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required placeholder="Enter your password">
+            </div>
+            <button type="submit">Login</button>
+            <p class="error-message" id="errorMsg"></p>
+            <p>Dont Have Account? <a href="register.html">Register</a></p>
+        </form>
+    </div>
 
-    <button type="login">login</button>
-
-    <label for="" class="sam"><a href="register.html">register/signup</a></label>
-
-  </form>
-
-  <script src="login.js"></script>
-  <!-- <script src="logout.js"></script> -->
+    <script src="login.js"></script>
 </body>
 </html>
+
+

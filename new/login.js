@@ -1,38 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("loginForm");
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); 
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const errorMsg = document.getElementById("errorMsg");
 
-    const name = document.getElementById("name").value.trim();
-    const password = document.getElementById("pass").value.trim();
+    errorMsg.style.display = "none"; // Hide error initially
 
-    if (name === "" || password === "") {
-      alert("Please fill in all fields.");
-      return;
+    // Input validation
+    if (email === "" || password === "") {
+        errorMsg.textContent = "Both fields are required.";
+        errorMsg.style.display = "block";
+        return;
     }
-    if ("user@gmail.com" && password === "123456"||name ==="sampath@gmail.com" && password === "6301787993") 
-      {
-      alert("Login successful!");
-      window.location.href = "home.html"; 
+
+    // Email format check (basic)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        errorMsg.textContent = "Please enter a valid email address.";
+        errorMsg.style.display = "block";
+        return;
+    }
+
+    // Dummy database of users
+    const users = [
+        { email: "sampath@gmail.com", password: "Sam@1234", name: "Sampath" }
+    ];
+
+    // Authentication logic
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (user) {
+        localStorage.setItem("loggedInUser", JSON.stringify(user)); // Save full user info
+        alert(`Welcome, ${user.name}!`);
+        window.location.href = "home.html";
     } else {
-      alert("Invalid credentials.");
+        errorMsg.textContent = "Invalid email or password.";
+        errorMsg.style.display = "block";
     }
-  });
 });
-document.addEventListener("DOMContentLoaded", function () {
-    const loginLogoutBtn = document.getElementById("loginLogoutBtn");
-    const isLoggedIn = localStorage.getItem("loggedInUser");
-
-    if (isLoggedIn) {
-      loginLogoutBtn.innerHTML = '<i class="fa-solid fa-arrow-right-from-bracket"></i> Logout';
-      loginLogoutBtn.addEventListener("click", function () {
-        localStorage.removeItem("loggedInUser");
-        alert("You have been logged out.");
-        window.location.href = "login.html";
-      });
-    } else {
-      loginLogoutBtn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket"></i> Login';
-      loginLogoutBtn.setAttribute("href", "login.html");
-    }
-  });
